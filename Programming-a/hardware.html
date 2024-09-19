@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hardware Basics - Tech Fundamentals</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Tech Fundamentals</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="topic-detail">
+            <h1>Hardware Basics</h1>
+            <p>Hardware refers to the physical components that make up a computer system. Understanding these parts helps in selecting and troubleshooting hardware for various tasks.</p>
+
+            <h2>Key Components</h2>
+            <!-- Existing content -->
+
+            <h2>Hardware Quiz</h2>
+            <p>Test your knowledge:</p>
+
+            <!-- Quiz Section -->
+            <div class="quiz">
+                <p><strong>1. What component is responsible for executing instructions?</strong></p>
+                <input type="radio" id="q1a" name="q1" value="correct">
+                <label for="q1a">CPU</label><br>
+                <input type="radio" id="q1b" name="q1" value="wrong">
+                <label for="q1b">Hard drive</label><br>
+                <input type="radio" id="q1c" name="q1" value="wrong">
+                <label for="q1c">RAM</label><br>
+
+                <p><strong>2. Which of the following is used for long-term data storage?</strong></p>
+                <input type="radio" id="q2a" name="q2" value="wrong">
+                <label for="q2a">RAM</label><br>
+                <input type="radio" id="q2b" name="q2" value="correct">
+                <label for="q2b">Hard drive</label><br>
+                <input type="radio" id="q2c" name="q2" value="wrong">
+                <label for="q2c">Motherboard</label><br>
+
+                <button onclick="submitHardwareQuiz()">Submit Quiz</button>
+                <p id="quiz-result"></p> <!-- Placeholder for quiz result -->
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Tech Fundamentals | <a href="contact.html">Contact Us</a></p>
+    </footer>
+
+    <!-- Add JavaScript for Quiz -->
+    <script>
+        function submitHardwareQuiz() {
+            let score = 0;
+            let feedback = "";
+
+            // Check question 1
+            if (document.querySelector('input[name="q1"]:checked') && document.querySelector('input[name="q1"]:checked').value === 'correct') {
+                score++;
+                feedback += "Q1: Correct! The CPU is responsible for executing instructions.\n";
+            } else {
+                feedback += "Q1: Incorrect. The CPU executes instructions.\n";
+            }
+
+            // Check question 2
+            if (document.querySelector('input[name="q2"]:checked') && document.querySelector('input[name="q2"]:checked').value === 'correct') {
+                score++;
+                feedback += "Q2: Correct! Hard drives store data long-term.\n";
+            } else {
+                feedback += "Q2: Incorrect. Hard drives are used for long-term data storage.\n";
+            }
+
+            // Calculate percentage score
+            const percentage = (score / 2) * 100;
+            let grade = "";
+
+            if (percentage >= 80) {
+                grade = "Pass";
+            } else {
+                grade = "Fail";
+            }
+
+            // Display result
+            document.getElementById('quiz-result').textContent = `You scored ${score}/2 (${percentage}%). ${grade}. \n\nFeedback: \n${feedback}`;
+        }
+    </script>
+</body>
+</html>

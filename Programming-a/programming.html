@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programming Fundamentals - Tech Fundamentals</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Tech Fundamentals</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="topic-detail">
+            <h1>Programming Fundamentals</h1>
+            <p>Programming is the process of creating a set of instructions that tell a computer how to perform a task. Understanding programming fundamentals is essential for anyone looking to start a career in technology.</p>
+
+            <h2>Key Concepts</h2>
+            <ul>
+                <li><strong>Variables:</strong> Store and manipulate data.</li>
+                <li><strong>Data Types:</strong> Different types of data such as integers, strings, and booleans.</li>
+                <li><strong>Control Structures:</strong> Conditional statements (if-else) and loops (for, while).</li>
+                <li><strong>Functions:</strong> Reusable blocks of code that perform a specific task.</li>
+                <li><strong>Algorithms:</strong> Step-by-step instructions to solve problems.</li>
+                <li><strong>Object-Oriented Programming:</strong> Concepts like classes, objects, and inheritance.</li>
+            </ul>
+
+            <h2>Languages</h2>
+            <p>Popular programming languages include:</p>
+            <ul>
+                <li>Python: Great for beginners due to its readability.</li>
+                <li>JavaScript: The language of the web.</li>
+                <li>Java: Used for building large-scale applications.</li>
+                <li>C++: Known for performance in systems programming.</li>
+            </ul>
+
+            <h2>Programming Quiz</h2>
+            <p>Test your knowledge with this quiz:</p>
+
+            <!-- Quiz Section -->
+            <div class="quiz">
+                <p><strong>1. Which of the following is a valid variable name in Python?</strong></p>
+                <input type="radio" id="q1a" name="q1" value="wrong">
+                <label for="q1a">1_variable</label><br>
+                <input type="radio" id="q1b" name="q1" value="correct">
+                <label for="q1b">variable_1</label><br>
+                <input type="radio" id="q1c" name="q1" value="wrong">
+                <label for="q1c">1variable</label><br>
+
+                <p><strong>2. Which data type is used to store true/false values in most programming languages?</strong></p>
+                <input type="radio" id="q2a" name="q2" value="wrong">
+                <label for="q2a">Integer</label><br>
+                <input type="radio" id="q2b" name="q2" value="correct">
+                <label for="q2b">Boolean</label><br>
+                <input type="radio" id="q2c" name="q2" value="wrong">
+                <label for="q2c">String</label><br>
+
+                <button onclick="submitQuiz()">Submit Quiz</button>
+                <p id="quiz-result"></p> <!-- Placeholder for quiz result -->
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Tech Fundamentals | <a href="contact.html">Contact Us</a></p>
+    </footer>
+
+    <!-- Add JavaScript for Quiz -->
+    <script>
+        function submitQuiz() {
+            let score = 0;
+
+            // Check question 1
+            if (document.querySelector('input[name="q1"]:checked') && document.querySelector('input[name="q1"]:checked').value === 'correct') {
+                score++;
+            }
+
+            // Check question 2
+            if (document.querySelector('input[name="q2"]:checked') && document.querySelector('input[name="q2"]:checked').value === 'correct') {
+                score++;
+            }
+
+            // Display the result
+            document.getElementById('quiz-result').textContent = `You scored ${score}/2.`;
+        }
+    </script>
+</body>
+</html>

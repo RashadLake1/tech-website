@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer Architecture - Tech Fundamentals</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Tech Fundamentals</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="topic-detail">
+            <h1>Computer Architecture</h1>
+            <p>Computer architecture refers to the structure and organization of computer systems, focusing on how the hardware components work together to execute instructions.</p>
+
+            <h2>Key Components</h2>
+            <!-- Existing content -->
+
+            <h2>Computer Architecture Quiz</h2>
+            <p>Test your knowledge:</p>
+
+            <!-- Quiz Section -->
+            <div class="quiz">
+                <p><strong>1. What is the main function of the CPU?</strong></p>
+                <input type="radio" id="q1a" name="q1" value="correct">
+                <label for="q1a">Execute instructions</label><br>
+                <input type="radio" id="q1b" name="q1" value="wrong">
+                <label for="q1b">Store data</label><br>
+                <input type="radio" id="q1c" name="q1" value="wrong">
+                <label for="q1c">Communicate with peripherals</label><br>
+
+                <p><strong>2. What component temporarily stores data that is actively used by the CPU?</strong></p>
+                <input type="radio" id="q2a" name="q2" value="wrong">
+                <label for="q2a">Hard drive</label><br>
+                <input type="radio" id="q2b" name="q2" value="correct">
+                <label for="q2b">RAM</label><br>
+                <input type="radio" id="q2c" name="q2" value="wrong">
+                <label for="q2c">Power supply</label><br>
+
+                <button onclick="submitArchitectureQuiz()">Submit Quiz</button>
+                <p id="quiz-result"></p> <!-- Placeholder for quiz result -->
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Tech Fundamentals | <a href="contact.html">Contact Us</a></p>
+    </footer>
+
+    <!-- Add JavaScript for Quiz -->
+    <script>
+        function submitArchitectureQuiz() {
+            let score = 0;
+            let feedback = "";
+
+            // Check question 1
+            if (document.querySelector('input[name="q1"]:checked') && document.querySelector('input[name="q1"]:checked').value === 'correct') {
+                score++;
+                feedback += "Q1: Correct! The CPU executes instructions.\n";
+            } else {
+                feedback += "Q1: Incorrect. The CPU's primary role is to execute instructions.\n";
+            }
+
+            // Check question 2
+            if (document.querySelector('input[name="q2"]:checked') && document.querySelector('input[name="q2"]:checked').value === 'correct') {
+                score++;
+                feedback += "Q2: Correct! RAM is the temporary storage for actively used data.\n";
+            } else {
+                feedback += "Q2: Incorrect. RAM temporarily stores active data for the CPU.\n";
+            }
+
+            // Calculate percentage score
+            const percentage = (score / 2) * 100;
+            let grade = "";
+
+            if (percentage >= 80) {
+                grade = "Pass";
+            } else {
+                grade = "Fail";
+            }
+
+            // Display result
+            document.getElementById('quiz-result').textContent = `You scored ${score}/2 (${percentage}%). ${grade}. \n\nFeedback: \n${feedback}`;
+        }
+    </script>
+</body>
+</html>

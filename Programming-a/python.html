@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getting Started with Python - Tech Fundamentals</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Tech Fundamentals</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="article-detail">
+            <h1>Getting Started with Python</h1>
+            <p>Python is a popular programming language due to its readability and ease of use. It is widely used for web development, automation, data analysis, and much more.</p>
+            
+            <h2>Why Python?</h2>
+            <p>Python is beginner-friendly, and its syntax is clean and easy to understand, making it an ideal choice for new programmers. Here are a few reasons why Python is so popular:</p>
+            <ul>
+                <li>Easy to read and write.</li>
+                <li>Extensive libraries and frameworks for various tasks.</li>
+                <li>Active community support and plenty of resources.</li>
+                <li>Versatile and cross-platform.</li>
+            </ul>
+
+            <h2>Basic Python Code Example</h2>
+            <p>Here’s a simple Python program that prints "Hello, World!" to the console:</p>
+            
+            <!-- Code Snippet -->
+            <pre><code class="python">
+def greet():
+    print("Hello, World!")
+
+greet()
+            </code></pre>
+            <button onclick="copyCode()">Copy Code</button>
+
+            <h2>Next Steps</h2>
+            <p>If you're just getting started, you can install Python from the official website and follow some basic tutorials to get familiar with writing simple programs.</p>
+
+            <a href="https://www.python.org" target="_blank">Learn More at Python's Official Site</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Tech Fundamentals | <a href="contact.html">Contact Us</a></p>
+    </footer>
+
+    <!-- JavaScript for Copying Code -->
+    <script>
+        function copyCode() {
+            const code = document.querySelector('pre code').innerText;
+            navigator.clipboard.writeText(code).then(() => {
+                alert('Code copied to clipboard!');
+            });
+        }
+    </script>
+</body>
+</html>
